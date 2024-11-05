@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <p>スライス</p>
+  <ul>
+    {{ range .Slice }}
+      {{ if eq . 1 }}
+        <li>壱</li>
+      {{ else }}
+        <li>{{ . }}</li>
+      {{ end }}
+    {{ else }}
+      <li>データなし</li>
+    {{ end }}
+  </ul>
+  <p>マップ</p>
+  <ul>
+    {{ range $k, $v := .Map }}
+      <li>{{ $k }}: {{ $v }}</li>
+    {{ end }}
+  </ul>
+{{ end }}
